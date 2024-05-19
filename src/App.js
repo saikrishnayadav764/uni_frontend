@@ -25,7 +25,7 @@ const App = () => {
           <Route path="/student/login" element={<StudentLogin/>} />
           <Route path="/student/signup" element={<StudentSignup/>} />
           <Route path="/student/profile" element={<MyProfile/>} />
-          <Route path="/" component={AdminLogin} />
+          <Route path="/" element={<StudentLogin/>} />
         </Routes>
       </AuthProvider>
       </Router>
