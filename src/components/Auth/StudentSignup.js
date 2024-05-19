@@ -8,14 +8,14 @@ const StudentSignup = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [enrollmentYear, setEnrollmentYear] = useState('');
-  const [fieldId, setFieldId] = useState('');
+  const [selectedFieldId, setSelectedFieldId] = useState('');
 
   const navigate = useNavigate();
 
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await authService.signupStudent(username, password, enrollmentYear, fieldId);
+      await authService.signupStudent(username, password, enrollmentYear, selectedFieldId);
       // Redirecting to student login or profile upon successful signup
       navigate('/student/login');
     } catch (error) {
@@ -33,7 +33,9 @@ const StudentSignup = () => {
               <h2 className="card-title text-center mb-4">Student Signup</h2>
               <form onSubmit={handleSignup}>
                 <div className="mb-3">
-                  <label htmlFor="username" className="form-label">Username:</label>
+                  <label htmlFor="username" className="form-label">
+                    Username:
+                  </label>
                   <input
                     type="text"
                     id="username"
@@ -43,7 +45,9 @@ const StudentSignup = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="password" className="form-label">Password:</label>
+                  <label htmlFor="password" className="form-label">
+                    Password:
+                  </label>
                   <input
                     type="password"
                     id="password"
@@ -53,7 +57,9 @@ const StudentSignup = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="enrollmentYear" className="form-label">Enrollment Year:</label>
+                  <label htmlFor="enrollmentYear" className="form-label">
+                    Enrollment Year:
+                  </label>
                   <input
                     type="number"
                     id="enrollmentYear"
@@ -63,19 +69,32 @@ const StudentSignup = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="fieldId" className="form-label">Field ID:</label>
-                  <input
-                    type="text"
-                    id="fieldId"
-                    value={fieldId}
-                    onChange={(e) => setFieldId(e.target.value)}
-                    className="form-control"
-                  />
+                  <label htmlFor="fieldId" className="form-label">
+                    Field ID:
+                  </label>
+
+                  <select
+                    className="form-control mb-2"
+                    value={selectedFieldId}
+                    onChange={(e) => setSelectedFieldId(e.target.value)}
+                  >
+                    <option value="">Select Field</option>
+                    {currfields.map((field) => (
+                      <option key={field.id} value={field.id}>
+                        {field.name}
+                      </option>
+                    ))}
+                  </select>
                 </div>
-                <button type="submit" className="btn btn-primary w-100">Signup</button>
+                <button type="submit" className="btn btn-primary w-100">
+                  Signup
+                </button>
               </form>
               <div className="mt-3 text-center">
-                <p>Already have an account? <Link to="/student/login">Login</Link></p>
+                <p>
+                  Already have an account?{" "}
+                  <Link to="/student/login">Login</Link>
+                </p>
               </div>
             </div>
           </div>
