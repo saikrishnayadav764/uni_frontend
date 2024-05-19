@@ -22,12 +22,12 @@ Welcome to the University Management System! This project aims to provide a comp
 
 ## Deployment Links
 
-- **Frontend:** [University Management System Frontend](frontend_deployment_link)
-- **Backend:** [University Management System Backend](backend_deployment_link)
+- **Frontend:** [University Management System Frontend](https://uni-frontend-three.vercel.app/)
+- **Backend:** [University Management System Backend](https://uni-backend-xepm.onrender.com/api)
 
 ## Backend Repository
 
-The backend code for this project can be found at [University Management System Backend](backend_github_repository_link).
+The backend code for this project can be found at [University Management System Backend](https://github.com/saikrishnayadav764/uni_backend).
 
 ## How to Run Locally
 
