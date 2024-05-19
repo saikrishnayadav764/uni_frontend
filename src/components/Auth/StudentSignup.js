@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import authService from '../../services/authService';
+import { useAuth } from '../../contexts/AuthContext';
 
 
 const StudentSignup = () => {
@@ -9,6 +10,7 @@ const StudentSignup = () => {
   const [password, setPassword] = useState('');
   const [enrollmentYear, setEnrollmentYear] = useState('');
   const [selectedFieldId, setSelectedFieldId] = useState('');
+  const {  currfields } = useAuth();
 
   const navigate = useNavigate();
 
