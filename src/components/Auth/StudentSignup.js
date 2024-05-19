@@ -72,7 +72,7 @@ const StudentSignup = () => {
                 </div>
                 <div className="mb-3">
                   <label htmlFor="fieldId" className="form-label">
-                    Field ID:
+                    Field:
                   </label>
 
                   <select
