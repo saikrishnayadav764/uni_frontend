@@ -34,13 +34,13 @@ The backend code for this project can be found at [University Management System 
 1. Clone the repository:
 
    ```
-   git clone https://github.com/yourusername/university-management-system.git
+   git clone https://github.com/saikrishnayadav764/uni_frontend.git
    ```
 
 2. Navigate to the project directory:
 
    ```
-   cd university-management-system
+   cd uni_frontend-main
    ```
 
 3. Install dependencies for both frontend and backend:
@@ -60,7 +60,7 @@ The backend code for this project can be found at [University Management System 
    npm start
 
    cd ../backend
-   npm start
+   node server,js
    ```
 
 5. Access the application in your browser at [http://localhost:3000](http://localhost:3000).
